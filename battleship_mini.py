@@ -1,29 +1,30 @@
 import numpy as np
 import random
 import os
+import pandas as pd
 
 print("\nBattleship Mini:\n")
 print("Played on a 5x5 grid.")
 print("Each player has 3 ships at one coordinate.")
 print("First to sink all wins.\n")
 
-board = np.array([["0","0","0","0","0"],
-				["0","0","0","0","0"],
-				["0","0","0","0","0"],
-				["0","0","0","0","0"],
-				["0","0","0","0","0"]])
+board = pd.DataFrame({"A":np.array(["0","0","0","0","0"]),
+					"B":np.array(["0","0","0","0","0"]),
+					"C":np.array(["0","0","0","0","0"]),
+					"D":np.array(["0","0","0","0","0"]),
+					"E":np.array(["0","0","0","0","0"])},index=[1,2,3,4,5])
 				
-compboard = np.array([["0","0","0","0","0"],
-					["0","0","0","0","0"],
-					["0","0","0","0","0"],
-					["0","0","0","0","0"],
-					["0","0","0","0","0"]])
+compboard = pd.DataFrame({"A":np.array(["0","0","0","0","0"]),
+					"B":np.array(["0","0","0","0","0"]),
+					"C":np.array(["0","0","0","0","0"]),
+					"D":np.array(["0","0","0","0","0"]),
+					"E":np.array(["0","0","0","0","0"])},index=[1,2,3,4,5])
 					
-compboardview = np.array([["X","X","X","X","X"],
-						["X","X","X","X","X"],
-						["X","X","X","X","X"],
-						["X","X","X","X","X"],
-						["X","X","X","X","X"]])
+compboardview = pd.DataFrame({"A":np.array(["0","0","0","0","0"]),
+						"B":np.array(["0","0","0","0","0"]),
+						"C":np.array(["0","0","0","0","0"]),
+						"D":np.array(["0","0","0","0","0"]),
+						"E":np.array(["0","0","0","0","0"])},index=[1,2,3,4,5])
 						
 usercordlist = []
 compcordlist = []
@@ -54,7 +55,7 @@ while nc>0:
 		pass
 	cy = int(cy)
 	cy = cy-1
-	compboard[cx][cy] = "1"
+	compboard.iloc[cx][cy] = "1"
 	nc-=1
 
 print()
@@ -117,7 +118,7 @@ for i in usercordlist:
 	else:
 		pass
 		
-	board[x][y] = "1"
+	board.iloc[x][y] = "1"
 
 input("\nClick enter to continue...")
 
@@ -185,8 +186,8 @@ while winner==0:
 	
 	if choice in compcordlist:
 		print("P1: Hit! You sunk a ship!")
-		compboardview[ux][uy] = "H"
-		compboard[ux][uy] = "X"
+		compboardview.iloc[ux][uy] = "H"
+		compboard.iloc[ux][uy] = "X"
 		indd = compcordlist.index(choice)
 		compcordlistview[indd] = "X"
 		compships-=1
@@ -195,7 +196,7 @@ while winner==0:
 			continue
 	else:
 		print("P1: Miss.")
-		compboardview[ux][uy] = "M"
+		compboardview.iloc[ux][uy] = "M"
 	
 	while True:
 		cox = random.choice(["A","B","C","D","E"])
@@ -223,7 +224,7 @@ while winner==0:
 	coy = coy-1
 	if compchoice in usercordlist:
 		print("Comp: Hit! Comp sunk a ship!")
-		board[cox][coy] = "X"
+		board.iloc[cox][coy] = "X"
 		ind = usercordlist.index(compchoice)
 		usercordlistview[ind] = "X"
 		userships-=1

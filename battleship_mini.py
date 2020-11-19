@@ -8,23 +8,23 @@ print("Played on a 5x5 grid.")
 print("Each player has 3 ships at one coordinate.")
 print("First to sink all wins.\n")
 
-board = pd.DataFrame({"A":np.array(["0","0","0","0","0"]),
-					"B":np.array(["0","0","0","0","0"]),
-					"C":np.array(["0","0","0","0","0"]),
-					"D":np.array(["0","0","0","0","0"]),
-					"E":np.array(["0","0","0","0","0"])},index=[1,2,3,4,5])
+board = pd.DataFrame({"1":np.array(["0","0","0","0","0"]),
+					"2":np.array(["0","0","0","0","0"]),
+					"3":np.array(["0","0","0","0","0"]),
+					"4":np.array(["0","0","0","0","0"]),
+					"5":np.array(["0","0","0","0","0"])},index=["A","B","C","D","E"])
 				
-compboard = pd.DataFrame({"A":np.array(["0","0","0","0","0"]),
-					"B":np.array(["0","0","0","0","0"]),
-					"C":np.array(["0","0","0","0","0"]),
-					"D":np.array(["0","0","0","0","0"]),
-					"E":np.array(["0","0","0","0","0"])},index=[1,2,3,4,5])
+compboard = pd.DataFrame({"1":np.array(["0","0","0","0","0"]),
+					"2":np.array(["0","0","0","0","0"]),
+					"3":np.array(["0","0","0","0","0"]),
+					"4":np.array(["0","0","0","0","0"]),
+					"5":np.array(["0","0","0","0","0"])},index=["A","B","C","D","E"])
 					
-compboardview = pd.DataFrame({"A":np.array(["0","0","0","0","0"]),
-						"B":np.array(["0","0","0","0","0"]),
-						"C":np.array(["0","0","0","0","0"]),
-						"D":np.array(["0","0","0","0","0"]),
-						"E":np.array(["0","0","0","0","0"])},index=[1,2,3,4,5])
+compboardview = pd.DataFrame({"1":np.array(["0","0","0","0","0"]),
+						"2":np.array(["0","0","0","0","0"]),
+						"3":np.array(["0","0","0","0","0"]),
+						"4":np.array(["0","0","0","0","0"]),
+						"5":np.array(["0","0","0","0","0"])},index=["A","B","C","D","E"])
 						
 usercordlist = []
 compcordlist = []

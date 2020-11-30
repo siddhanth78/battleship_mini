@@ -5,7 +5,7 @@ import pandas as pd
 
 print("\nBattleship Mini:\n")
 print("Played on a 5x5 grid.")
-print("Each player has 3 ships at one coordinate.")
+print("Each player has 3 ships at one coordinate each.")
 print("First to sink all wins.\n")
 
 board = pd.DataFrame({"1":np.array(["0","0","0","0","0"]),
